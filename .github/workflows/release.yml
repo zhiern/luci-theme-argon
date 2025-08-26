@@ -56,11 +56,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         with:
-          name: For openwrt official Snapshots LuCI master
+          name: For openwrt official Snapshots LuCI openwrt-24.10
           tag_name: ${{steps.check_version.outputs.latest_version}}
 
   job_build_argon:
-    name: Build Argon (master)
+    name: Build Argon (openwrt-24.10)
     needs: job_check
     if: needs.job_check.outputs.has_update == 'true'
     runs-on: ubuntu-latest

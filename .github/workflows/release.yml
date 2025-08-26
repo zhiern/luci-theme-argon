@@ -8,6 +8,7 @@ on:
       - "openwrt-24.10"
     paths:
       - "luci-theme-argon/Makefile"
+      - "luci-app-argon-config/Makefile"
 env:
   TZ: Asia/Shanghai
 
@@ -107,7 +108,9 @@ jobs:
         run: |
           cd sdk
           echo "make package/luci-theme-argon/{clean,compile} -j$(nproc)"
+          echo "make package/luci-app-argon-config/{clean,compile} -j$(nproc)"
           make package/luci-theme-argon/{clean,compile} -j$(nproc)
+          make package/luci-app-argon-config/{clean,compile} -j$(nproc)
           mv bin/packages/x86_64/base/ ../
           rm .config .config.old
           cd ..
@@ -121,4 +124,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{needs.job_check.outputs.argon_version}}
-          files: ${{ env.FIRMWARE }}/base/luci-theme*.*
+          files: |
+            ${{ env.FIRMWARE }}/base/luci-theme*.ipk
+            ${{ env.FIRMWARE }}/base/*argon-config*.ipk

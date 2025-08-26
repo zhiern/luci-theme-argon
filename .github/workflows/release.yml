@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@main
         with:
           fetch-depth: 0
-          ref: "master"
+          ref: "openwrt-24.10"
 
       - name: Check version
         id: check_version

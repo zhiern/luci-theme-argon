@@ -16,7 +16,7 @@
 [download-badge]: https://img.shields.io/github/downloads/zhiern/luci-theme-argon/total?style=flat-square
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/zhiern/luci-theme-argon/openwrt-24.10/Screenshots/argon_title.svg" width="600">
+<img src="https://raw.githubusercontent.com/jerrykuku/staff/master/argon_title4.svg">
 
 # 一个简洁优雅的 OpenWrt 主题
 

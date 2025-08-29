@@ -96,6 +96,8 @@ jobs:
           git clone -b openwrt-24.10 https://github.com/${{ github.repository }}.git package/downloads/luci-theme-argon
           ./scripts/feeds update -a
           echo "CONFIG_PACKAGE_luci-theme-argon=m" > .config
+          cho "CONFIG_PACKAGE_luci-app-argon-config=m" > .config
+          echo "CONFIG_PACKAGE_luci-i18n-argon-config-zh-cn=m > .config
           ./scripts/feeds install -d n luci-theme-argon
           make download -j8
 
